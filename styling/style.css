@@ -1,0 +1,136 @@
+.node {
+    width: 25px;
+    height: 25px;
+    box-shadow: 0px 0px 1px black;
+}
+
+.nav ul {
+    position: fixed;
+}
+
+.nav ul {
+    /* position: fixed; */
+    list-style-type: none;
+    background-color: #a9bcba;
+}
+
+nav li a {
+    display: inline-block;
+    text-align: center;
+    margin: 0px;
+    padding: 10px 10px;
+    color: white;
+}
+
+
+.nav-btn {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: white;
+}
+
+.space {
+    margin: 300px;
+}
+
+.container {
+    padding: 10px;
+    overflow:hidden;
+    display: inline-block;
+}
+
+.drop-down {
+    padding:10px;
+    background-color: white;
+}
+
+.drop-down-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+}
+
+.drop-down:hover .drop-down-content {
+    display: block;
+}
+
+.drop-down-content a {
+    color: red;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: right;
+    overflow: auto;
+}
+
+#grid {
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.visited {
+    background-color: white;
+    animation-name: visited-transition;
+    animation-duration: 1s;
+    background-color:skyblue;
+}
+
+.not-visited {
+    background-color: white;
+}
+
+.obstacle {
+    background-color: white;
+    animation-name: obstacle-transition;
+    animation-duration: 0.3s;
+    background-color:rgba(53, 55, 61);
+}
+
+.path {
+    background-color: purple;
+}
+
+.start {
+    background-color: greenyellow;
+}
+
+.end {
+    background-color: royalblue ;
+}
+
+@keyframes visited-transition {
+
+    0%   {
+        background-color: white; 
+        border-radius: 100%;
+        transform: scale(.6);
+    }
+
+    50% {
+        background-color: rgba(32,178,170,0.75);
+        /* lightseagreen */
+    }
+    75%  {
+        background-color:rgba(64,224,208,0.75);
+        transform: scale(1.2); 
+    }
+
+    100% {
+        background-color: rgba(135, 206, 235, 0.75);
+        /* skyblue */
+        transform: scale(1.0);
+    }   
+}
+
+@keyframes obstacle-transition {
+    0%   {
+        background-color: white; 
+    }
+    75%  {
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: rgb(53, 55, 61);
+        transform: scale(1.0);
+    }  
+}
