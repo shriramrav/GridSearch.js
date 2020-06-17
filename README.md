@@ -5,4 +5,4 @@ GridSearch.js is a JavaScript-based project that showcases how path-finding/grap
 ### Link: [GridSearch.js](https://shriramrav.github.io/GridSearch.js/)
 
 ## License
-- [MIT](https://github.com/shriramrav/Grid-Search/blob/master/LICENSE)
+- [MIT](https://github.com/shriramrav/GridSearch.js/blob/master/LICENSE)
