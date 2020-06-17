@@ -7,58 +7,44 @@ export default class Node {
         this.prevNode = null;
     }
     
-    isStart() {
-        return this.start;
-    }
+    isStart = () => this.start;
     
-    setStart(t) {
+    setStart = (t) => {
         this.start = t;
         this.chkT(t);
-    }
+    };
     
-    setEnd(t) {
+    setEnd = (t) => {
         this.end = t;
         this.chkT(t);
-    }
+    };
     
-    isEnd() {
-        return this.end;
-    }
+    isEnd = () => this.end;
     
-    setEnabled(t) {
-        this.enabled = t;
-    }
+    setEnabled = (t) => this.enabled = t;
     
-    isEnabled() {
-        return this.enabled;
-    }
+    isEnabled = () => this.enabled;
 
-    isVisited() {
-        return this.visited;
-    }
+    isVisited = () => this.visited;
 
-    setVisited(t, prev) {
+    setVisited = (t, prev) => {
         this.visited = t;
         this.prevNode = prev;
-    }
+    };
 
-    prev() {
-        return this.prevNode;
-    }
+    prev = () => this.prevNode;
 
-    setPrev(pos) {
-        this.prevNode = pos;
-    }
+    setPrev = (pos) => this.prevNode = pos;
 
-    close() {
-        this.visited = true;
-    }
+    close = () => this.visited = true;
 
-    chkT(t) {
-        if (t == true) {
-            this.setEnabled(false);
-        } else {
-            this.setEnabled(true);
-        }
-    } 
+    chkT = (t) => this.setEnabled((t == true) ? false : true);
+
+    reset = () => {
+        this.start = false;
+        this.end = false;
+        this.enabled = true;
+        this.visited = false;
+        this.prevNode = null;
+    };
 }

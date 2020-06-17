@@ -37,9 +37,7 @@ export default class BFS {
                     }
                 }
             }
-            if (visited.length != 0) {
-                searched.push(visited);
-            }
+            if (visited.length != 0) searched.push(visited);
         }
         
         animate(searched.flat());

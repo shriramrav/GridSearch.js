@@ -2,8 +2,7 @@ let draw = (dims) => {
     let initNode = (i, j) => {
         let node = document.createElement('td');
         node.setAttribute('id', `${i}-${j}`);
-        node.classList.add('node');
-        node.classList.add('not-visited');
+        node.className = 'node not-visited';
         document.getElementById(`tr${i}`).appendChild(node);
     };    
     for (let i = 0; i < dims.rows; i++) {
@@ -14,44 +13,16 @@ let draw = (dims) => {
     }
 };
 
-let visit = (pos) => {
-    let node = document.getElementById(`${pos.Y}-${pos.X}`);
-    node.classList.remove('not-visited');
-    node.classList.add('visited');
-};
+let visit = (pos) => document.getElementById(`${pos.Y}-${pos.X}`).className = 'node visited';
 
-let obstruct = (id) => {
-    let node = document.getElementById(id);
-    node.classList.remove('not-visited');
-    node.classList.add('obstacle');
-};
+let obstruct = (id) => document.getElementById(id).className = 'node obstacle';
 
-let traverse = (pos) => {
-    let node = document.getElementById(`${pos.Y}-${pos.X}`);
-    node.classList.remove('not-visited');
-    node.classList.add('path');
-};
+let traverse = (pos) => document.getElementById(`${pos.Y}-${pos.X}`).className = 'node path';
 
-let start = (id) => {
-    let node = document.getElementById(id);
-    node.classList.remove('not-visited');
-    node.classList.remove('obstacle');
-    node.classList.add('start');
-};
+let start = (id) => document.getElementById(id).className = 'node start';
 
-let end = (id) => {
-    let node = document.getElementById(id);
-    node.classList.remove('not-visited');
-    node.classList.remove('obstacle');
-    node.classList.add('end');
-};
+let end = (id) => document.getElementById(id).className = 'node end';
 
-let purge = (id) => {
-    let node = document.getElementById(id);
-    node.classList.remove('obstacle');
-    node.classList.remove('end');
-    node.classList.remove('start')
-    node.classList.add('not-visited');
-};
+let purge = (id) => document.getElementById(id).className = 'node not-visited';
 
 export { draw, visit, obstruct, traverse, start, end, purge };

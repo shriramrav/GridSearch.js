@@ -19,12 +19,12 @@ export default class Grid {
     setStart = (pos) => {
         this.getNode(pos).setStart(true);
         this.startPos = pos;
-    }
+    };
 
     setEnd = (pos) => {
         this.getNode(pos).setEnd(true);
         this.endPos = pos;
-    }
+    };
 
     getStartNode = () => this.getNode(this.getStartPos());
 

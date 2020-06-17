@@ -1,0 +1,117 @@
+#grid {
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.node {
+    width: 25px;
+    height: 25px;
+    box-shadow: 0px 0px 1px black;
+    text-align: center;
+    font-size: 30px;
+    table-layout:fixed;
+    padding: 0px 0px;
+    overflow: auto;
+}
+
+.visited {
+    background-color: white;
+    animation-name: visited-transition;
+    animation-duration: 1s;
+    background-color:skyblue;
+}
+
+.not-visited {
+    background-color: white;
+}
+
+.obstacle {
+    background-color: white;
+    animation-name: obstacle-transition;
+    animation-duration: 0.5s;
+    background-color:rgba(53, 55, 61);
+}
+
+.path {
+    animation-name: path-transition;
+    animation-duration: 1s;
+    background-color: rgb(232, 67, 67);
+}
+
+.start {
+    animation-name: start-transition;
+    animation-duration: 0.5s;
+    background-color: #5e8b03;
+}
+
+.end {
+    animation-name: end-transition;
+    animation-duration: 0.5s;
+    background-color: royalblue;
+}
+
+@keyframes path-transition {
+    
+    0% {
+        transform: scale(1.2);
+        background-color: rgb(221, 67, 232); 
+    }
+
+    100% { background-color: rgb(232, 67, 67); }
+}
+
+
+@keyframes visited-transition {
+
+    0%   {
+        background-color: white; 
+        border-radius: 100%;
+        transform: scale(.6);
+    }
+
+    50% { background-color: rgba(32,178,170,0.75); }
+
+    75%  {
+        background-color:rgba(64,224,208,0.75);
+        transform: scale(1.2); 
+    }
+
+    100% {
+        background-color: rgba(135, 206, 235, 0.75);
+        transform: scale(1.0);
+    }   
+}
+
+@keyframes obstacle-transition {
+    0%   { background-color: white; }
+
+    75%  { transform: scale(1.1); }
+    
+    100% {
+        background-color: rgb(53, 55, 61);
+        transform: scale(1.0);
+    }  
+}
+
+@keyframes start-transition {
+    0%   { background-color: white; }
+
+    50%  { transform: scale(1.1); }
+    70%  { transform: scale(1.1); }
+    
+    100% {
+        background-color:  #5e8b03;
+        transform: scale(1.0);
+    }  
+}
+
+@keyframes end-transition {
+    0%   { background-color: white; }
+
+    50%  { transform: scale(1.1); }
+    70%  { transform: scale(1.1); }
+    
+    100% {
+        background-color:  royalblue;
+        transform: scale(1.0);
+    }  
+}

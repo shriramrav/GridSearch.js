@@ -62,7 +62,6 @@ export default class A_Star {
     }
 
     static dist(p1, p2) {
-        console.log(p2);
         return Math.abs(p2.X - p1.X) + Math.abs(p2.Y - p1.Y);
     }
 

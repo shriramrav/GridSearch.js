@@ -13,8 +13,25 @@ let init = () => {
 };
 
 let run = () => {
-    // BFS.search(grid);
-    A_Star.search(grid);
+    switch (algo) {
+        case ('a-star'):
+            A_Star.search(grid);
+            break;
+        case ('bfs'):
+            BFS.search(grid);
+            break;
+    }
+};
+
+let clearGrid = () => {
+    let dims = grid.getDims();
+    for (let i = 0; i < dims.rows; i++) {
+        for (let j = 0; j < dims.cols; j++) {
+            grid.getNode({ X: j, Y: i }).reset();
+            Nodes.purge(`${i}-${j}`);
+        }
+    }
+    start_end = [false, false];
 };
 
 let animate = (visited) => {
@@ -119,6 +136,16 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
+let algo = 'a-star';
+
+document.getElementById('algo-selector').addEventListener('mousedown', (e) => {
+    if (e.target.tagName === 'A') {
+        algo = e.target.id;
+        document.getElementById('selected-algo').textContent = 'Selected: ' + e.target.id.toUpperCase() ;
+    }
+});
+
 window.init = init;
 window.run = run;
 window.animate = animate;
+window.clearGrid = clearGrid;

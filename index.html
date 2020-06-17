@@ -1,22 +1,27 @@
 <html>
 <div class="nav">
     <ul>
-        <li class="drop-down"><a>Boeing Family</a>
-            <div class="drop-down-content">
-                <a href="#">Boeing 737 class</a>
-                <a href="#">Boeing 747 class</a>
-                <a href="#">Boeing 787 class</a>
+        <li class="title">Grid Search</li>
+        <li class="drop-down inverse"><a>Algorithms</a>
+            <div id="algo-selector" class="drop-down-content">
+                <a id="a-star">A-Star (A*)</a>
+                <a id="bfs">Breadth-First Search</a>
             </div>
+        </li>
+        <li>
+            <input class="nav-btn inverse" type="button" value="Run" onclick="run()">
+            <input class="nav-btn inverse" type="button" value="Clear" onclick="clearGrid()">
+        </li>
+        <li>
+           <span id="selected-algo" class="nav-btn selected">Selected: A-STAR</span>
         </li>
     </ul>
 </div>
-<!-- <input class="nav-btn" type="button" value="Run" onclick="run()"> -->
 <div class="space"></div>
-
 <body onload="init()">
     <div id="grid"></div>
-    <link rel="stylesheet" href="styling/style.css">
+    <link rel="stylesheet" href="styling/grid.css">
+    <link rel="stylesheet" href="styling/nav.css">
     <script type="module" src="main.js"></script>
 </body>
-
 </html>
